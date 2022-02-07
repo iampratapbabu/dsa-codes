@@ -1,6 +1,9 @@
+#include<bits/stdc++.h> //contains all the header files
+/*
 #include <iostream>
 #include <unordered_map>
 #include <string>
+*/
 using namespace std;
 
 
@@ -30,9 +33,11 @@ int main()
     cout<<ourmap["ghi"]<<endl; //ghi koi key nhi hai phir bhi value 0 dikha rha hai
     //so at function is safer to use
 
-    cout<<ourmap.at("abc")<<endl;
+    cout<<ourmap.at("ghi")<<endl;
     //this is safe method kuki agar out of range access krenge to isme error show ho
     //jayega bt upar wale me nhi show hoga jisse runtime pr garbage value milegi
+    //as because hm pehle hi ourmap["ghi"] run kr chuke so .at() method me bhi 0 show
+    //ho rha hai
 
     //size
     cout<<"size: "<<ourmap.size()<<endl;
