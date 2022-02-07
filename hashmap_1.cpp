@@ -43,10 +43,11 @@ int main()
     cout<<"size: "<<ourmap.size()<<endl;
 
     //check presence
-    //this fucntion tells whether somethings count 0 times or 1 times or more
-    /*if(ourmap.count("abc")>0){
+    //this fucntion tells whether somethings count 0 times or 1 times
+    //map me koi element ya to 0 baar ya 1 baar hi aa skti hai
+    if(ourmap.count("abc")>0){
         cout<<"key :abc is present"endl;
-    }*/
+    }
 
 
     //erase
