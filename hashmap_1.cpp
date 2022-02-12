@@ -31,7 +31,7 @@ int main()
     cout<<ourmap["def"]<<endl;
 
     cout<<ourmap["ghi"]<<endl; //ghi koi key nhi hai phir bhi value 0 dikha rha hai
-    //so at function is safer to use
+    //so .at() function is safer to use
 
     cout<<ourmap.at("ghi")<<endl;
     //this is safe method kuki agar out of range access krenge to isme error show ho
@@ -42,11 +42,11 @@ int main()
     //size
     cout<<"size: "<<ourmap.size()<<endl;
 
-    //check presence
+    //checking presence
     //this fucntion tells whether somethings count 0 times or 1 times
     //map me koi element ya to 0 baar ya 1 baar hi aa skti hai
     if(ourmap.count("abc")>0){
-        cout<<"key :abc is present"endl;
+        cout<<"key :abc is present"<<endl;
     }
 
 
