@@ -85,7 +85,68 @@ public:
 
         return ans;
     }
+
+
 };
+
+
+//heasp sort function
+void inplaceHeapSort(int pq[],int n){
+        //sbse pehele input array se heap bana lenge
+        for(int i=1;i<n;i++){
+            int childIndex = i;
+            while(childIndex>0){
+            int parentIndex = (childIndex-1)/2; //parent index calculte kr liye
+            //coz parent index pr jo element hai usi se compare krna hota hai ki
+            //element shi jagah hai ya swapping krna prega
+            if(pq[childIndex]<pq[parentIndex]){ //agar childindex wala element chhota hai
+                    //means galat jagah hai hme use parent index wale element se swap krna hoga
+                    int temp = pq[childIndex];
+                    pq[childIndex]=pq[parentIndex];
+                    pq[parentIndex]=temp;
+
+            }else{ //agar child element chhota nhi hai means swap krne ki jaroorat nhi
+                break;
+            }
+            childIndex=parentIndex;
+        }
+        }
+
+        //now ek ek element ko heap se remove krenge to sorted order me bahar aayege
+        int size = n;
+
+        while(size>1){
+        int temp=pq[0];
+        pq[0]=pq[size-1];
+        pq[size-1]=temp;
+
+        size--;
+
+        int parentIndex = 0;
+        int leftChildIndex = 2*parentIndex+1;
+        int rightChildIndex = 2*parentIndex+2;
+
+        while(leftChildIndex<size){
+            int minIndex = parentIndex;
+            if(pq[minIndex]>pq[leftChildIndex]){
+                minIndex=leftChildIndex;
+            }
+            if(rightChildIndex<size&&pq[rightChildIndex]<pq[minIndex]){
+                minIndex=rightChildIndex;
+            }
+            if(minIndex==parentIndex){
+                break;
+            }
+            int temp = pq[minIndex];
+            pq[minIndex]=pq[parentIndex];
+            pq[parentIndex]=temp;
+
+            parentIndex=minIndex;
+            leftChildIndex = 2*parentIndex+1;
+            rightChildIndex = 2*parentIndex+2;
+        }
+    }
+    }
 
 int main()
 {
@@ -106,6 +167,14 @@ int main()
     while(!p.isEmpty()){
         cout<<"Element Removed: "<<p.removeMin()<<endl;
     }
+
+    //inplace heap sort
+    int input[]={1,5,2,8,0};
+    inplaceHeapSort(input,5);
+    for(int i=0;i<5;i++){
+        cout<<input[i]<<" ";
+    }
+    cout<<endl;
 
     return 0;
 }
