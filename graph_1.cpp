@@ -126,6 +126,8 @@ int main()
     //BFS(edges,n);
     //same type se hi work krega visited array na bana kr ke directly pass krenge
     //can watch the video for more clarification
+    //graph-1 me is part ke part se 5-6 small level graph questions discussed hain
+    //unka code bhi khud se likhna
 
 
 
