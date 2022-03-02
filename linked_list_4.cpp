@@ -14,19 +14,44 @@ public:
 
 };
 
+//-----------------taking input of linked list-------------------//
+Node* takeInput1()
+{
+    int data;
+    cin>>data;
+    Node* head=NULL;
+    Node* tail=NULL;
+    while(data != -1){
+        Node* newNode = new Node(data);
+        if(head==NULL){
+             head=newNode;
+             tail=newNode;
+        }
+       else{
+        tail->next=newNode;
+        tail=tail->next;
+        //OR
+        //tail=newNode;
+       }
+        cin>>data;
+    }
+    return head;
+}
+
 void print(Node* head)
 {
-    //direct head node ko use nhi krenge pehle ek temp node bna lenge
+        //direct head node ko use nhi krenge pehle ek temp node bna lenge
         //so that operation ke baad bhi head ka value change nhi ho
         Node* temp = head;
         while(temp!=NULL){
 
         //pehle data print krenge
-        cout<<temp->data<<endl;
+        cout<<temp->data<<" ";
         //ab temp ka value aage kr denge means temp me temp ka next value dal denge
         temp=temp->next;
         //aisa tb tk krenge jab tk temp null na ho jaye
     }
+    cout<<endl;
 }
 
 //-------------finding mid of the linked list-----------------//
@@ -42,6 +67,9 @@ void midNode(Node* head)
 }
 
 //---------------merging two sorted linked list-----------------//
+Node* mergeLinkedList(Node* list1, Node* list2){
+
+}
 
 
 int main()
@@ -62,13 +90,21 @@ int main()
     //n5 ke address me automatically null hai
     //now our linked list is connected
 
-    //to print our linkes list we will create a function and pass head node as a
+    //to print our linked list we will create a function and pass head node as a
     //parameter because agar hme linked list ka head node mil gaya meand sb kuchh
     //mil gya linked list ka
     print(head);
 
     //finding mid of the linked list
+    cout<<"mid of the linked list is: ";
     midNode(head);
+
+    //merging two linked lists
+    Node* list1=takeInput1();
+    Node* list2=takeInput1();
+    print(list1);
+    print(list2);
+
 
     return 0;
 }
