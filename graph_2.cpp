@@ -6,6 +6,7 @@ bahut sare spanning trees me edges me weight diye rehte hain we have to calculte
 */
 
 /*krushkal's algorithms
+it is an algorithm that helps us to find mst of a given graph
 vertex = n
 edge=n-1
 */
