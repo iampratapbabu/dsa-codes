@@ -11,7 +11,7 @@ vertex = n
 edge=n-1
 */
 
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 //edge name ka class bana liye to store ki kahan se kahan tk edge ja rha hai
@@ -28,8 +28,15 @@ bool compare(Edge e1,Edge e2){
     return e1.weight < e2.weight;
 }
 
+int findParent(int v,int* parent){
+    if(parent[v]==v){
+        return v;
+    }
+    return findParent(parent[v],parent);
+}
+
 //kruskals algorithm calling
-void kruskals(Edge* input, int n, int E)
+void kruskals(Edge* input,int n,int E)
 {
     //sbse pehle input array ko sort kr lenge taki apne weight ke hisab se ho jaye edges
     sort(input,input+E,compare);
@@ -62,8 +69,20 @@ void kruskals(Edge* input, int n, int E)
         if(sourceParent!=destParent){
             output[count]=currentEdge;
             count++;
+            parent[sourceParent]=destParent;
         }
         i++;
+    }
+    //printing the mst
+    cout<<"-----OUTPUT"<<endl;
+    for(int i=0;i<n-1;i++){
+            if(output[i].source<output[i].dest){
+                cout<<output[i].source<<" "<<output[i].dest<<" "<<output[i].weight<<endl;
+            }
+            else{
+                cout<<output[i].dest<<" "<<output[i].source<<" "<<output[i].weight<<endl;
+            }
+
     }
 
 }
@@ -75,7 +94,7 @@ int main()
     cin>>n>>E;
     Edge* input = new Edge[E];  //input name ka array banaye hain jo edge type ka hai and dynamic hai
     //now is edge type array me input lenge
-    for(int i=0;i<E,i++){
+    for(int i=0;i<E;i++){
         int s,d,w;
         cin>>s>>d>>w;
         input[i].source=s;
@@ -87,7 +106,28 @@ int main()
     //now kruskals algorithm call krenge and vertices and  edge pass krenge
     kruskals(Edge,n,E);
 
-
-
     return 0;
+
+    /*input to be given
+    6 11 (6 vertex and 11 edges)
+    0 1 2
+    1 3 1
+    0 2 4
+    2 4 9
+    4 5 5
+    3 5 7
+    4 3 11
+    2 5 10
+    0 3 3
+    2 1 8
+    2 3 6
+
+    output should be
+    1 3 1
+    0 1 2
+    0 2 4
+    4 5 5
+    3 5 7
+
+
 }
