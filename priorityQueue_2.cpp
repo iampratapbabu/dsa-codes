@@ -32,7 +32,7 @@ int main()
     }
 
     //to make a min heap
-    priority_queue<int,vector<int>,greater<int>> pqmin;
+    priority_queue<int,vector<int>,greater<int> > pqmin;
     pqmin.push(167);
     pqmin.push(78);
     pqmin.push(87);

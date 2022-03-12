@@ -90,7 +90,7 @@ public:
 };
 
 
-//heasp sort function
+//heap sort function
 void inplaceHeapSort(int pq[],int n){
         //sbse pehele input array se heap bana lenge
         for(int i=1;i<n;i++){
@@ -126,24 +126,24 @@ void inplaceHeapSort(int pq[],int n){
         int leftChildIndex = 2*parentIndex+1;
         int rightChildIndex = 2*parentIndex+2;
 
-        while(leftChildIndex<size){
+        while(leftChildIndex < size){
             int minIndex = parentIndex;
-            if(pq[minIndex]>pq[leftChildIndex]){
+            if(pq[minIndex] > pq[leftChildIndex]){
                 minIndex=leftChildIndex;
             }
-            if(rightChildIndex<size&&pq[rightChildIndex]<pq[minIndex]){
-                minIndex=rightChildIndex;
+            if(rightChildIndex < size && pq[rightChildIndex] < pq[minIndex]){
+                minIndex = rightChildIndex;
             }
-            if(minIndex==parentIndex){
+            if(minIndex == parentIndex){
                 break;
             }
             int temp = pq[minIndex];
-            pq[minIndex]=pq[parentIndex];
-            pq[parentIndex]=temp;
+            pq[minIndex] = pq[parentIndex];
+            pq[parentIndex] = temp;
 
-            parentIndex=minIndex;
-            leftChildIndex = 2*parentIndex+1;
-            rightChildIndex = 2*parentIndex+2;
+            parentIndex = minIndex;
+            leftChildIndex = 2 * parentIndex + 1;
+            rightChildIndex = 2 * parentIndex + 2;
         }
     }
     }
