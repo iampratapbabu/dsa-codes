@@ -23,7 +23,7 @@ Node* takeInput()
     //ek head pointer banake value NULL rakh liye
     while(data != -1){
         //jb tk inputted value -1 na ho tb tk ye loop chalega
-        //now ek naya node banayenge
+        //now ek naya node banayenge dynamically
         Node* newNode = new Node(data);
 
         //agar head ki value null hai means sbse pehle node create ho rha hai

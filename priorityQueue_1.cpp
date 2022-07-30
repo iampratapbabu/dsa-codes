@@ -2,6 +2,9 @@
 #include <vector>
 using namespace std;
 
+//priority queue is made out of complete binary tree but stores the elements in form of array
+//or vector
+
 class PriorityQueue
 {
     vector<int> pq;

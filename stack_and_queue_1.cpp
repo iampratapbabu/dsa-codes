@@ -10,7 +10,7 @@ class stackUsingArray
     //to traverse through array nextIndex le liye hain int type ka
     int capacity;
     //ise isliye initialize kiye hain taki stack ka size pata rhe
-    //basically ye help krta hai ye dekhne me ki hmara stack overfloe to nhi kr rha
+    //basically ye help krta hai ye dekhne me ki hmara stack overflow to nhi kr rha
 
 public:
     //constructor
