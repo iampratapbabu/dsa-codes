@@ -135,11 +135,11 @@ void print(Node* head)
 int main()
 {
     //we will make linked list according to user inputted value
-    Node* head=takeInput1();
+    Node* head=takeInput();
     print(head);
-    int i,data;
+    /*int i,data;
     insertNode(head,2,56);
-    print(head);
+    print(head);*/
 
     return 0;
 }
