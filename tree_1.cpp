@@ -50,6 +50,14 @@ void preorder(TreeNode<int>* root){
 }
 
 //TODO: levelorder printing
+/*void levelorder(TreeNode<int>* root){
+    if(root==NULL)
+        return;
+    for(int i=0;i<root->children.size();i++){
+        cout<<root->data<<" ";
+        levelorder(children[i]);
+    }
+}*/
 
 
 //TODO: postorder printing
@@ -182,8 +190,13 @@ int main()
     //preorder printing
     //preorder(root);
 
+    //levelorder printing
+    //levelorder(root);
+
     //postorder printing
     postorder(root);
+
+
 
     //counting total nodes
     int totalNodes = countNodes(root);
