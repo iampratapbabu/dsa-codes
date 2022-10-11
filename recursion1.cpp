@@ -35,6 +35,22 @@ int fibonacciDiff(int n){
     return smalloutput1+smalloutput2;
 }
 
+//checking if array is sorted
+bool is_sorted(int a[],int size){
+    if(size==0 || size==1){
+        return true;
+    }
+    if(a[0]>a[1]){
+        return false;
+    }
+    bool smaller_sorted = is_sorted(a+1,size-1);
+    if(smaller_sorted){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
 
 int main() {
     // Write C++ code here
@@ -44,8 +60,10 @@ int main() {
     int output = factorial(n);
     cout<<output<<endl;
     //cout<<fibonacci(n);
-    cout<<fibonacciDiff(n);
-
+    cout<<fibonacciDiff(n)<<endl;
+    int a[]={1,2,3,4,5};
+    int sizeofarray = sizeof(a)/sizeof(a[0]);
+    cout<<is_sorted(a,sizeofarray)<<endl;
     return 0;
 }
 
