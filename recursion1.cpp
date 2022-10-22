@@ -86,7 +86,7 @@ int lastIndex(int a[],int size,int x){
 }
 
 int allIndices(){
-
+    cout<<"all indices";
 }
 
 int main() {
